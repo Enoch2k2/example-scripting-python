@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+
+import sys
+import os
+
+from lib.config_generate import add_line, create_file
+
+if __name__ == "__main__":
+  if sys.argv[1] == "generate-config":
+    print("creating config file...")
+    create_file('config.py')
+    print("adding import to config file...")
+    add_line(file="config.py", text="import os")
+
+
+  else:
+    print("oops we typed something that wasn't generating config")
